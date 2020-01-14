@@ -11,20 +11,19 @@ public class tela2 extends AppCompatActivity {
 
     public class MainActivity2 extends AppCompatActivity {
 
-        private Button botao1;
+        private Button angry_btn;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.tela2activity);
 
-            botao1 = (Button) findViewById(R.id.botao1);
+            angry_btn = (Button) findViewById(R.id.angry_btn);
 
-            botao1.setOnClickListener(new View.OnClickListener() {
+            angry_btn.setOnClickListener(new View.OnClickListener() {
                                           @Override
-                                          public void onClick(View v) {
-
-                                              botao1Activity();
+                                          public void onClick(View view) {
+                                              angry_btn
 
                                           }
 

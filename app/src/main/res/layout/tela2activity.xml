@@ -90,7 +90,7 @@
         android:layout_marginRight="87dp"
         android:background="@drawable/buttonshape2"
         android:text="Entrar"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/branco"
         android:textSize="23sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
