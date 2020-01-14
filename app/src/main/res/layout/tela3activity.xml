@@ -21,8 +21,16 @@
         android:background="#9a1a12"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:navigationIcon="@drawable/navigationicon"
-        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="276dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="49dp"
+        android:layout_height="55dp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/navigationicon"
+        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="276dp" />
 
 
