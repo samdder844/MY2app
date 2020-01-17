@@ -28,20 +28,7 @@
             android:textSize="25sp"
             android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:background="@android:color/transparent"
-            android:paddingRight="10sp"
-            app:srcCompat="@drawable/sino" />
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/navigationicon" />
+
     </androidx.appcompat.widget.Toolbar>
 
 
