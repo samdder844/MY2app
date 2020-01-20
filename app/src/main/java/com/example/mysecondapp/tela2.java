@@ -9,6 +9,7 @@ import android.widget.Button;
 public class tela2 extends AppCompatActivity {
 
     private Button entrar;
+    private  Button entrarR;
 
     @Override
 
@@ -25,6 +26,16 @@ public class tela2 extends AppCompatActivity {
             }
 
         });
+
+        entrarR = (Button) findViewById(R.id.botao2);
+
+        entrarR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                proximaTela();
+
+            }
+        });
     }
 
     private void botao2Activity() {
@@ -32,4 +43,8 @@ public class tela2 extends AppCompatActivity {
         startActivity(new Intent(tela2.this, tela3.class));
     }
 
+    private void proximaTela(){
+
+        startActivity(new Intent(tela2.this, cadastro.class));
+    }
 }
