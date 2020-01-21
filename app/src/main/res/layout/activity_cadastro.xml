@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/EMAIL"
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:layout_marginStart="43dp"
@@ -77,10 +77,10 @@
         android:textColorHint="@color/branco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/senha" />
+        app:layout_constraintTop_toBottomOf="@+id/SENHA" />
 
     <EditText
-        android:id="@+id/senha"
+        android:id="@+id/SENHA"
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:layout_marginStart="44dp"
@@ -92,7 +92,7 @@
         android:textColorHint="@color/branco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toBottomOf="@+id/EMAIL" />
 
     <Button
         android:id="@+id/botaocad"

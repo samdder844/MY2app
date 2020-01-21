@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void botao1Activity() {
 
-        startActivity(new Intent(MainActivity.this, tela2.class));
+        startActivity(new Intent(MainActivity.this, login.class));
 
     }
 }

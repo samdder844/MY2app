@@ -23,7 +23,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".tela4" />
         <activity android:name=".tela3" />
-        <activity android:name=".tela2" />
+        <activity android:name=".login" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

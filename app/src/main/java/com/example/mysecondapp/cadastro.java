@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.mysecondapp.R;
-
 
 public class cadastro extends AppCompatActivity {
 
@@ -26,8 +24,8 @@ public class cadastro extends AppCompatActivity {
             public void onClick(View v) {
                 BancoController crud = new BancoController(getBaseContext());
                 EditText nome = (EditText) findViewById(R.id.nome);
-                EditText email = (EditText) findViewById((R.id.email));
-                EditText senha = (EditText) findViewById(R.id.senha);
+                EditText email = (EditText) findViewById((R.id.EMAIL));
+                EditText senha = (EditText) findViewById(R.id.SENHA);
                 EditText senhaConf = (EditText) findViewById(R.id.senhaconfere);
 
                 String nomeString = nome.getText().toString();
