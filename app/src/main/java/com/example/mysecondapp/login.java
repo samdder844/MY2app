@@ -3,9 +3,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.media.audiofx.LoudnessEnhancer;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -38,7 +36,7 @@ public class login extends AppCompatActivity {
 
                 if (strEmail.equals(resEmail) && strSenha.equals(resSenha)) {
                     Toast.makeText(getApplicationContext(), "Seja bem-vindo.", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(this, tela3.class);
+                    Intent intent = new Intent(this, MapsActivity2.class);
                     startActivity(intent);
                 } else {
                     erro = true;
