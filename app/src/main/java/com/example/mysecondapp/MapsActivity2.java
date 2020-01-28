@@ -20,6 +20,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
@@ -59,12 +60,16 @@ public class MapsActivity2 extends AppCompatActivity implements OnMapReadyCallba
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
         LatLng Sapucaia = new LatLng(-29.832761, -51.165529);
         LatLng unisinos = new LatLng(-29.794583, -51.155508);
+
         mMap.addMarker(new MarkerOptions().position(Sapucaia).title("Marker in Sapucaia"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(Sapucaia));
+
+
         mMap.addMarker(new MarkerOptions().position(unisinos).title("Marker in unisinos"));
+
+
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(unisinos));
 
         mMap.animateCamera((CameraUpdateFactory.newLatLngZoom(Sapucaia, 12.f)));
@@ -82,6 +87,9 @@ public class MapsActivity2 extends AppCompatActivity implements OnMapReadyCallba
                 requestPermissions(LOCATION_PERMS, LOCATION_REQUEST);
             }
         }
+
+
+
         mMap.addPolyline(new PolylineOptions()
         .add(Sapucaia, unisinos)
         .width(10)
@@ -90,7 +98,7 @@ public class MapsActivity2 extends AppCompatActivity implements OnMapReadyCallba
         mMap.addCircle(
                 new CircleOptions()
                         .center(unisinos)
-                        .radius(1580.0)
+                        .radius(2980.0)
                         .strokeWidth(3f)
                         .strokeColor(Color.RED)
                         .fillColor(Color.argb(70,150,50,50))
