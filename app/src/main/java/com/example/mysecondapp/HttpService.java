@@ -1,93 +1,50 @@
 package com.example.mysecondapp;
 
 import android.os.AsyncTask;
+import com.google.gson.Gson;
 
-public class HttpService extends AsyncTask<Void, Void, Void> {
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Scanner;
+
+public class HttpService extends AsyncTask<Void, Void, cep> {
+
+    private final String cepi;
+
+    public HttpService(String cep) {
+        this.cepi = cep;
+    }
 
     @Override
     protected Void doInBackground(Void... voids) {
-        // realizar requisição e consumir o serviço
+        StringBuilder resposta = new StringBuilder();
+    }
+    if (this.cep!= null && this.cep.length() == 8) {
+        try {
+            URL url = new URL("http://ws.matheuscastiglioni.com.br/ws/cep/find/" + this.cep + "/json/");
+
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty("Content-type", "application/json");
+            connection.setRequestProperty("Accept", "application/json");
+            connection.setDoOutput(true);
+            connection.setConnectTimeout(5000);
+            connection.connect();
+
+            Scanner scanner = new Scanner(url.openStream());
+            while (scanner.hasNext()) {
+                resposta.append(scanner.next());
+                resposta.append(BLANK_SPACE);
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    private final String cep;
-
-    public HttpService(String cep) {
-        this.cep = cep;
-    }
-
-    @Override
-    protected CEP doInBackground(Void... voids) {
-        if (this.cep != null && this.cep.length() == 8) {
-            // realizar busca
-        }
-    }
-    public class CEP {
-
-        private String cep;
-        private String logradouro;
-        private String complemento;
-        private String bairro;
-        private String cidade;
-        private String estado;
-
-        public String getCep() {
-            return cep;
-        }
-
-        public void setCep(String cep) {
-            this.cep = cep;
-        }
-
-        public String getLogradouro() {
-            return logradouro;
-        }
-
-        public void setLogradouro(String logradouro) {
-            this.logradouro = logradouro;
-        }
-
-        public String getComplemento() {
-            return complemento;
-        }
-
-        public void setComplemento(String complemento) {
-            this.complemento = complemento;
-        }
-
-        public String getBairro() {
-            return bairro;
-        }
-
-        public void setBairro(String bairro) {
-            this.bairro = bairro;
-        }
-
-        public String getCidade() {
-            return cidade;
-        }
-
-        public void setCidade(String cidade) {
-            this.cidade = cidade;
-        }
-
-        public String getEstado() {
-            return estado;
-        }
-
-        public void setEstado(String estado) {
-            this.estado = estado;
-        }
-
-        @Override
-        public String toString() {
-            return "CEP: " + getCep()
-                    + "\nLogradouro: " + getLogradouro()
-                    + "\nComplemento: " + getComplemento()
-                    + "\nBairro: " + getBairro()
-                    + "\nCidade:" + getCidade()
-                    + "\nEstado: " + getEstado();
-        }
-
-    }
-
+        return new Gson().fromJson(resposta.toString(), CEP.class);
+}
 }
