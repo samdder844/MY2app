@@ -21,7 +21,7 @@ public class buscacep extends AppCompatActivity {
 
             final EditText cep = findViewById(R.id.CEP);
            //parei aqui no trabalho///
-            final TextView resposta = findViewById(R.id.etMain_resposta);
+            final TextView resposta = findViewById(R.id.texto);
 
             btnBuscarCep.setOnClickListener(new View.OnClickListener() {
                 @Override

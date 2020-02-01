@@ -10,7 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button botao1;
-
+    private Button botao3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +28,31 @@ public class MainActivity extends AppCompatActivity {
 
         }
         );
+
+        botao3 = (Button) findViewById(R.id.button3);
+
+        botao3.setOnClickListener(new View.OnClickListener() {
+                                      @Override
+                                      public void onClick(View v) {
+
+                                          botaocep();
+
+                                      }
+
+                                  }
+        );
+
     }
 
     private void botao1Activity() {
 
         startActivity(new Intent(MainActivity.this, login.class));
+
+    }
+
+    private void botaocep() {
+
+        startActivity(new Intent(MainActivity.this,buscacep.class));
 
     }
 }
